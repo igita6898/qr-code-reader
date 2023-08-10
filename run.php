@@ -9,9 +9,9 @@ $dir = $argv[1]; // 要获取文件列表的目录路径
 $file_list = scandir($dir);
 // 循环遍历文件列表并输出每个文件和子目录的名称
 foreach($file_list as $file) {
-    echo $file . PHP_EOL;
-    if($file != '.' && $file != '..'){
-        $qrcode = new \Zxing\QrReader($dir. DIRECTORY_SEPARATOR .$file);  //图片路径
+    if($file != '.' && $file != '..') {
+        echo '文件名: '. $file . PHP_EOL . '文件内容:' . PHP_EOL;
+        $qrcode = new \Zxing\QrReader($dir . DIRECTORY_SEPARATOR . $file);  //图片路径
         $text = $qrcode->text(); //返回识别后的文本
         echo $text . PHP_EOL;
 //        file_put_contents($file_name, $text . PHP_EOL,FILE_APPEND);
