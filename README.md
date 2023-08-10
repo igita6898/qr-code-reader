@@ -14,7 +14,7 @@ $qrcode = new \Zxing\QrReader('./qr.png');  //图片路径
 $text = $qrcode->text(); //返回识别后的文本
 echo $text;
 ```
-### 命令行批量识别目录下的二维码文件
+### 命令行批量识别目录下的二维码文件内容
 ```
 php run.php qrcode_files_dir
 ```
